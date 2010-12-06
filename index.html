@@ -103,6 +103,16 @@
   <section>
     <hgroup>
       <h1>Git Basics</h1>
+      <h2>The Index</h2>
+    </hgroup>
+    <p>What's the index? Or, how does a commit work?</p>
+    
+    <img src="http://ditaa.org/ditaa/render?grid=Working+Copy+++++Index+++++Repository%0D%0A++++++%7C++++++++++++%7C+++++++++++%7C%0D%0A++++++%7C---add-----%3E%7C+++++++++++%7C%0D%0A++++++%7C---add-----%3E%7C+++++++++++%7C%0D%0A++++++%7C---remove--%3E%7C+++++++++++%7C%0D%0A++++++%7C++++++++++++%7C---commit-%3E%7C%0D%0A++++++%7C++++++++++++%7C+++++++++++%7C%0D%0A++++++%7C-------commit+-a+------%3E%7C%0D%0A++++++%7C++++++++++++++++++++++++%7C&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
       <h2>Branching and Merging</h2>
     </hgroup>
     <p>Branching and merging are cheap!</p>
@@ -150,6 +160,16 @@
   <section>
     <hgroup>
       <h1>Git Basics</h1>
+      <h2>Branching</h2>
+    </hgroup>
+    <p>Creates a new branch of commits</p>
+    
+    <img src="http://ditaa.org/ditaa/render?grid=%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A%7C+C1+%7C+%3C--%7C+C2+%7C+%3C--%7C+C3+%7C+master%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A+++++++++++++%5E%0D%0A+++++++++++++%7C++++%2B----%2B%0D%0A+++++++++++++%2B----%7C+C4+%7C+feature_x%0D%0A++++++++++++++++++%2B----%2B&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
       <h2>What does branching look like?</h2>
     </hgroup>
     <p>
@@ -170,6 +190,34 @@
   <section>
     <hgroup>
       <h1>Git Basics</h1>
+      <h2>Merge</h2>
+    </hgroup>
+    <p>
+      Merge the changes of another branch into a new commit.
+    </p>
+
+    <ul>
+      <li class="action"><code>git merge <i>branch_name</i></code></li>
+    </ul>
+
+    <p></p>
+    <p class="note action">Merge always creates a new commit, unless there are merge conflicts. <br />
+    &raquo; Manually resolve the conflicts and commit.</p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Merging</h2>
+    </hgroup>
+    <p>Merge to branches of commits into one.</p>
+    
+    <img src="http://ditaa.org/ditaa/render?grid=%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A%7C+C1+%7C+%3C--%7C+C2+%7C+%3C--%7C+C3+%7C+%3C--%7C+C5+%7C%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A+++++++++++++%5E+++++++++++++++++++%7C%0D%0A+++++++++++++%7C++++++%2B----%2B+++++++%7C%0D%0A+++++++++++++%2B------%7C+C4+%7C%3C------%2B%0D%0A++++++++++++++++++++%2B----%2B&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
       <h2>Tags</h2>
     </hgroup>
     <p>
@@ -182,6 +230,15 @@
     <p class="note action">
       Tags are cheap too!
     </p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Tags</h2>
+    </hgroup>
+    
+    <img src="http://ditaa.org/ditaa/render?grid=++++++++++%2B-----%2B%0D%0A++++++++++%7C+TAG+%7C%0D%0A++++++++++%2B-----%2B%0D%0A+++++++++++++%7C%0D%0A+++++++++++++v%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A%7C+C1+%7C+%3C--%7C+C2+%7C+%3C--%7C+C3+%7C%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
   </section>
 
   <section>
@@ -221,24 +278,6 @@
   <section>
     <hgroup>
       <h1>Git Basics</h1>
-      <h2>Merge</h2>
-    </hgroup>
-    <p>
-      Merge the changes of another branch into a new commit.
-    </p>
-
-    <ul>
-      <li class="action"><code>git merge <i>branch_name</i></code></li>
-    </ul>
-
-    <p></p>
-    <p class="note action">Merge always creates a new commit, unless there are merge conflicts. <br />
-    &raquo; Manually resolve the conflicts and commit.</p>
-  </section>
-
-  <section>
-    <hgroup>
-      <h1>Git Basics</h1>
       <h2>Rebase</h2>
     </hgroup>
     <p>
@@ -252,6 +291,28 @@
     <p></p>
     <p class="note action">Rebase <i>undoes</i> your commits, applies the commits from the parent branch, and then replays your work.</p>
     <p class="warning action"><strong>Never</strong> rebase a branch that you share with others (e.g. you pull or push)<br />Rebase local branches only!</p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Rebase</h2>
+    </hgroup>
+    
+    <p>Before <code>git checkout -b feature_x</code></p>
+
+    <img src="http://ditaa.org/ditaa/render?grid=%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A%7C+C1+%7C+%3C--%7C+C2+%7C+%3C--%7C+C3+%7C+%3C--%7C+C5+%7C%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A+++++++++++++%5E%0D%0A+++++++++++++%7C++++++%2B----%2B%0D%0A+++++++++++++%2B------%7C+C4+%7C%0D%0A++++++++++++++++++++%2B----%2B&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Rebase</h2>
+    </hgroup>
+    
+    <p>After <code>git rebase master</code></p>
+
+    <img src="http://ditaa.org/ditaa/render?grid=%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A%7C+C1+%7C+%3C--%7C+C2+%7C+%3C--%7C+C3+%7C+%3C--%7C+C5+%7C%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A+++++++++++++++++++++++++++++++++%5E%0D%0A+++++++++++++++++++++++++++++++++%7C+++%2B----%2B%0D%0A+++++++++++++++++++++++++++++++++%2B---%7C+C4+%7C%0D%0A+++++++++++++++++++++++++++++++++++++%2B----%2B&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
   </section>
 
   <section>
