@@ -54,7 +54,8 @@ nav button { float: left; border: 0; width: 26px; height: 25px; text-indent: -99
 .slide code { font-size:20px; font-family: monospace; }
 .slide hgroup {margin: 0 0 20px;}
 
-.quote { font-style: italic; font-size: 18px; margin-left: 20px; color: #666; }
-.note  { background-color: #ff9; padding: 5px 10px; }
+.quote   { font-style: italic; font-size: 18px; margin-left: 20px; color: #666; }
+.note    { background-color: #ff9; padding: 5px 10px; }
+.warning { background-color: #f99; padding: 5px 10px; }
 
 img.border { border: 3px solid #ccc; }
