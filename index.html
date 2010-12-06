@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="resources/styles.css" />
+<link rel="stylesheet" href="content/css/styles.css" />
+<title>Training Eduhub - Dag 1</title>
+</head>
+<body>
+<header>
+    <h1>Training Eduhub - Dag 1</h1>
+    <nav>
+        <ul>
+            <li><button id="prev-btn" title="Previous slide">Previous Slide</button></li>
+            <li><span id="slide-number"></span><span id="slide-total"></span></li>
+            <li><button id="next-btn" title="Next Slide">Next Slide</button></li>
+        </ul>
+    </nav>
+</header>
+<footer>
+  <h1>Ariejan de Vroom // Kabisa ICT</h1>
+</footer>
+<div id="deck">
+  <section>
+    <hgroup>
+      <h1>Training Edubhub</h1>
+      <h2>Dag 1 - Git, OTAP, Intro testen</h2>
+      <p>
+      <img style="position: absolute; bottom: 50px; right: 20px;" src="content/images/kabisa_logo.gif" />
+      </p>
+    </hgroup>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Over mij</h1>
+      <h2>Ariejan de Vroom</h2>
+    </hgroup>
+      <ul>
+        <li class="action">Ruby on Rails Developer sinds 2006</li>
+        <li class="action">Java, Objective-C, etc.</li>
+        <li class="action">Email: <a href="mailto:ariejan@kabisa.nl">ariejan@kabisa.nl</a></li>
+      </ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Agenda</h1>
+    </hgroup>
+    <ul>
+      <li>Git Basics</li>
+
+      <li>OTAP</li>
+
+      <li>Unit Testing</li>
+    </ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Naming git</h2>
+   </hgroup>
+
+   <p class="quote">&#8220;I'm an egotistical bastard, and I name all
+   <br />my projects after myself. First Linux. Now git&#8221;<br />
+   &nbsp;&nbsp;&nbsp; - Linus Torvalds</p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Why git?</h2>
+    </hgroup>
+    <ul>
+      <li>Distributed</li>
+      <li>Non-linear</li>
+      <li>Very fast branching and merging</li>
+      <li>Scales with your project</li>
+    </ul>
+
+    <p></p>
+    <p class="note action">Linux Kernel 2.6.35 has 13.5 million lines of code, and is managed with git</p>
+    <!-- Reference: http://en.wikipedia.org/wiki/Source_lines_of_code -->
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Hack, add, commit, review, repeat</h2>
+    </hgroup>
+    <p>Every day <code>git</code></p>
+
+    <ul>
+      <li class="action"><code>git init</code></li>
+      <li class="action"><code>git add</code></li>
+      <li class="action"><code>git status</code></li>
+      <li class="action"><code>git commit</code></li>
+      <li class="action"><code>git log</code></li>
+    <ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Branching and Merging</h2>
+    </hgroup>
+    <p>Branching and merging are cheap!</p>
+
+    <ul>
+      <li class="action"><code>git checkout -b new_branch</code></li>
+      <li class="action"><code>git merge some_branch</code></li>
+    </ul>
+
+    <p></p>
+    <p class="note action">No data is duplicated when branching (unlike Subversion)</p>
+    <p class="note action">Merging uses changesets, not entire files</p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>So branching is cheap?</h2>
+    </hgroup>
+    <p>
+      Why should I care?
+    </p>
+    <ul>
+      <li class="action">It's fast. You love fast!</li>
+      <li class="action">Try new things without any hassle</li>
+      <li class="action">Keep different code paths separate with ease</li>
+    </ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>What does branching look like?</h2>
+    </hgroup>
+    <p>
+      <img src="content/images/git_branches.jpg" class="border" />
+    </p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>What does branching look like?</h2>
+    </hgroup>
+    <p>
+      <img src="content/images/git_branches_rails.jpg" class="border" />
+    </p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Tags</h2>
+    </hgroup>
+    <p>
+      Mark a point in time you want to remember.
+    </p>
+    <p class="action">
+      <code>git tag -a -m "Tagging our first release" v1.0</code>
+    </p>
+
+    <p class="note action">
+      Tags are cheap too!
+    </p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Remember, remember!</h2>
+    </hgroup>
+    <p>
+      Some checkout commands to remember.
+    </p>
+
+    <ul>
+      <li class="action"><code>git clone <i>repository</i></code></li>
+      <li class="action"><code>git checkout <i>branch_name</i></code></li>
+      <li class="action"><code>git checkout <i>revision</i></code></li>
+      <li class="action"><code>git checkout <i>tag</i></code></li>
+    </ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Fetch, Pull and Push</h2>
+    </hgroup>
+    <p>
+      Communicate with other repositories.
+    </p>
+
+    <ul>
+      <li class="action"><code>git add remote <i>kabisa</i> <i>http://git.kabisa.nl/some_repo.git</i></code></li> 
+      <li class="action"><code>git fetch <i>kabisa master</i></code></li>
+      <li class="action"><code>git pull <i>kabisa master</i></code></li>
+      <li class="action"><code>git push <i>kabisa master</i></code></li>
+    </ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Merge</h2>
+    </hgroup>
+    <p>
+      Merge the changes of another branch into a new commit.
+    </p>
+
+    <ul>
+      <li class="action"><code>git merge <i>branch_name</i></code></li>
+    </ul>
+
+    <p></p>
+    <p class="note action">Merge always creates a new commit, unless there are merge conflicts. <br />
+    &raquo; Manually resolve the conflicts and commit.</p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Rebase</h2>
+    </hgroup>
+    <p>
+      Pull new commits from the parent branch.
+    </p>
+
+    <ul>
+      <li class="action"><code>git rebase <i>master</i></code></li>
+    </ul>
+    
+    <p></p>
+    <p class="note action">Rebase <i>undoes</i> your commits, applies the commits from the parent branch, and then replays your work.</p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
+      <h2>Exercise</h2>
+    </hgroup>
+    <p>
+      Work alone or in pairs
+    </p>
+
+    <ul>
+      <li class="action">Clone (or fork+checkout): <code>http://github.com/ariejan/sample_cms</code></li>
+      <li class="action">Pick a TODO (or invent your own feature/fix) and start work!</li>
+    </ul>
+
+    <p></p>
+    <p class="note action">The fun part is to create conflicts, tags and branches!</p>
+
+    <h2 class="action">Good luck!</h2>
+  </section>
+
+  <!-- OTAP -->
+
+  <section>
+    <hgroup>
+      <h1>OTAP</h1>
+      <h2>What's 'OTAP'?</h2>
+    </hgroup>
+    <p>
+      OTAP is a Dutch abbreviation.
+    </p>
+    <ul>
+      <li class="action">Ontwikkling (development)</li>
+      <li class="action">Test (test)</li>
+      <li class="action">Acceptatie (staging)</li>
+      <li class="action">Productie (production)</li>
+    </ul>
+
+    <p></p>
+    <p class="action">
+      The goal of OTAP is to have four different application states at any given time.
+    </p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>OTAP</h1>
+      <h2>OTAP + Git = Branches!</h2>
+    </hgroup>
+    <p>
+      Is the OTAP approach compatible with <code>git</code>?
+    </p>
+
+    <p class="action">
+      Yes, it is!
+    </p>
+
+    <ul>
+      <li class="action">Development - <code>master</code></li>
+      <li class="action">Test - <code>test</code></li>
+      <li class="action">Staging - <code>staging</code></li>
+      <li class="action">Production - <code>production</code></li>
+    </ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>OTAP</h1>
+      <h2>How the git?!</h2>
+    </hgroup>
+    <p class="action">
+      You already have <code>master</code>
+    </p>
+
+    <p class="action">
+      Branch and push <code>test</code>, <code>staging</code> and <code>production</code>.
+    </p>
+
+    <p class="action">
+      Use the appropriate branch when doing your work.
+    </p>
+
+    <p class="note action">
+      In some scenarios it's okay to branch <code>production</code> to apply and test a fix for a critical bug. Just make sure you apply the
+      your changes back to the other branches.
+    </p>
+      
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>OTAP</h1>
+      <h2>Exercise</h2>
+    </hgroup>
+    <ul>
+      <li class="action">Setup your remote repo, preferably using CodebaseHQ</li>
+      <li class="action">Create and push the <code>test</code>, <code>staging</code> and <code>production</code> branches.</li>
+      <li class="action">Add a new feature, walk through the OTAP process</li>
+    </ul>
+  </section>
+
+  <!-- Unit Testing -->
+
+  <section>
+    <hgroup>
+      <h1>Testing</h1>
+      <h2>Why test?</h2>
+    </hgroup>
+    <p>
+      Why should I test my code?
+    </p>
+
+    <ul>
+      <li class="action">Prove your code works</li>
+    </ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Testing</h1>
+      <h2>What flavour would you like?</h2>
+    </hgroup>
+    <p>
+      You can test your application on different levels.
+    </p>
+
+    <ul>
+      <li class="action">The business and application logic</li>
+      <li class="action">The database (keys, relations, fields, etc.)</li>
+      <li class="action">The user experience</li>
+      <li class="action">Integration (API)</li>
+    </ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Unit Testing</h1>
+      <h2>I'd love to test, but...</h2>
+    </hgroup>
+    <p>
+      There are hundreds of reasons not to test.
+    </p>
+
+    <ul>
+      <li class="action">Writing tests takes more time than writing the actual code</li>
+      <li class="action">Maintaining tests takes a lot of effort, especially when refactoring</li>
+      <li class="action">Reaching 100% test coverage is impossible, why bother?</li>
+      <li class="action">My tests take too long to run, I removed them.</li>
+      <li class="action">We have tests, but there are still bugs!</li>
+      <li class="action">Stress! We need to deliver tomorrow!</li>
+    </ul>
+  </section>
+
+</div>
+<!-- /deck -->
+<script src="resources/jquery-1.4.2.min.js"></script>
+<script src="resources/htmlSlides.js"></script>
+<script>
+//This is just to demo the custom events
+$('html').bind('newSlide', function(e,id) { console.log('New slide event, slide number ' + id)});
+$('html').bind('newAction', function(e,id) { console.log('New action event, action number ' + id)});
+</script>
+</body>
+</html>
