@@ -93,6 +93,8 @@
 
     <ul>
       <li class="action"><code>git init</code></li>
+      <li class="action"><code>git clone</code></li>
+      <li class="action"><code>git checkout</code></li>
       <li class="action"><code>git add</code></li>
       <li class="action"><code>git status</code></li>
       <li class="action"><code>git commit</code></li>
@@ -103,11 +105,28 @@
   <section>
     <hgroup>
       <h1>Git Basics</h1>
+      <h2>Remember, remember!</h2>
+    </hgroup>
+    <p>
+      Some checkout commands to remember.
+    </p>
+
+    <ul>
+      <li class="action"><code>git clone <i>repository</i></code></li>
+      <li class="action"><code>git checkout <i>branch_name</i></code></li>
+      <li class="action"><code>git checkout <i>revision</i></code></li>
+      <li class="action"><code>git checkout <i>tag</i></code></li>
+    </ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Git Basics</h1>
       <h2>The Index</h2>
     </hgroup>
     <p>What's the index? Or, how does a commit work?</p>
     
-    <img src="http://ditaa.org/ditaa/render?grid=Working+Copy+++++Index+++++Repository%0D%0A++++++%7C++++++++++++%7C+++++++++++%7C%0D%0A++++++%7C---add-----%3E%7C+++++++++++%7C%0D%0A++++++%7C---add-----%3E%7C+++++++++++%7C%0D%0A++++++%7C---remove--%3E%7C+++++++++++%7C%0D%0A++++++%7C++++++++++++%7C---commit-%3E%7C%0D%0A++++++%7C++++++++++++%7C+++++++++++%7C%0D%0A++++++%7C-------commit+-a+------%3E%7C%0D%0A++++++%7C++++++++++++++++++++++++%7C&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
+    <img src="content/images/git_x_index.png" width="60%" class="border" />
   </section>
 
   <section>
@@ -162,9 +181,9 @@
       <h1>Git Basics</h1>
       <h2>Branching</h2>
     </hgroup>
-    <p>Creates a new branch of commits</p>
+    <p>Creates a new branch of commits: <code>git checkout -b feature_x</code></p>
     
-    <img src="http://ditaa.org/ditaa/render?grid=%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A%7C+C1+%7C+%3C--%7C+C2+%7C+%3C--%7C+C3+%7C+master%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A+++++++++++++%5E%0D%0A+++++++++++++%7C++++%2B----%2B%0D%0A+++++++++++++%2B----%7C+C4+%7C+feature_x%0D%0A++++++++++++++++++%2B----%2B&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
+    <img src="content/images/git_x_branches.png" width="60%" class="border" />
   </section>
 
   <section>
@@ -211,8 +230,12 @@
       <h2>Merging</h2>
     </hgroup>
     <p>Merge to branches of commits into one.</p>
+    <pre>
+    git checkout master
+    git merge feature_x
+    </pre>
     
-    <img src="http://ditaa.org/ditaa/render?grid=%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A%7C+C1+%7C+%3C--%7C+C2+%7C+%3C--%7C+C3+%7C+%3C--%7C+C5+%7C%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A+++++++++++++%5E+++++++++++++++++++%7C%0D%0A+++++++++++++%7C++++++%2B----%2B+++++++%7C%0D%0A+++++++++++++%2B------%7C+C4+%7C%3C------%2B%0D%0A++++++++++++++++++++%2B----%2B&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
+    <img src="content/images/git_x_merge.png" width="60%" class="border" />
   </section>
 
   <section>
@@ -238,24 +261,19 @@
       <h2>Tags</h2>
     </hgroup>
     
-    <img src="http://ditaa.org/ditaa/render?grid=++++++++++%2B-----%2B%0D%0A++++++++++%7C+TAG+%7C%0D%0A++++++++++%2B-----%2B%0D%0A+++++++++++++%7C%0D%0A+++++++++++++v%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A%7C+C1+%7C+%3C--%7C+C2+%7C+%3C--%7C+C3+%7C%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
+    <img src="content/images/git_x_tag.png" width="60%" class="border" />
   </section>
 
   <section>
     <hgroup>
       <h1>Git Basics</h1>
-      <h2>Remember, remember!</h2>
+      <h2>Fetch, Pull and Push</h2>
     </hgroup>
     <p>
-      Some checkout commands to remember.
+      Communicate with other repositories.
     </p>
 
-    <ul>
-      <li class="action"><code>git clone <i>repository</i></code></li>
-      <li class="action"><code>git checkout <i>branch_name</i></code></li>
-      <li class="action"><code>git checkout <i>revision</i></code></li>
-      <li class="action"><code>git checkout <i>tag</i></code></li>
-    </ul>
+    <img src="content/images/git_x_push_pull.png" width="60%" class="border" />
   </section>
 
   <section>
@@ -301,7 +319,7 @@
     
     <p>Before <code>git checkout -b feature_x</code></p>
 
-    <img src="http://ditaa.org/ditaa/render?grid=%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A%7C+C1+%7C+%3C--%7C+C2+%7C+%3C--%7C+C3+%7C+%3C--%7C+C5+%7C%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A+++++++++++++%5E%0D%0A+++++++++++++%7C++++++%2B----%2B%0D%0A+++++++++++++%2B------%7C+C4+%7C%0D%0A++++++++++++++++++++%2B----%2B&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
+    <img src="content/images/git_x_rebase_before.png" width="60%" class="border" />
   </section>
 
   <section>
@@ -312,7 +330,7 @@
     
     <p>After <code>git rebase master</code></p>
 
-    <img src="http://ditaa.org/ditaa/render?grid=%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A%7C+C1+%7C+%3C--%7C+C2+%7C+%3C--%7C+C3+%7C+%3C--%7C+C5+%7C%0D%0A%2B----%2B++++%2B----%2B++++%2B----%2B++++%2B----%2B%0D%0A+++++++++++++++++++++++++++++++++%5E%0D%0A+++++++++++++++++++++++++++++++++%7C+++%2B----%2B%0D%0A+++++++++++++++++++++++++++++++++%2B---%7C+C4+%7C%0D%0A+++++++++++++++++++++++++++++++++++++%2B----%2B&scale=2&background=FFFFFF&E=on&timeout=10" class="border" />
+    <img src="content/images/git_x_rebase_after.png" width="60%" class="border" />
   </section>
 
   <section>
@@ -382,6 +400,40 @@
   <section>
     <hgroup>
       <h1>OTAP</h1>
+      <h2>Using git tags</h2>
+    </hgroup>
+
+    <pre>
+    git checkout production
+    git rebase v1.1
+    </pre>
+    
+    <img src="content/images/otap_tagging.png" width="60%" class="border" />
+
+    <p></p>
+    <p class='note action'>No code changes in <code>test</code>, <code>staging</code> and <code>production</code> wanted!</p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>OTAP</h1>
+      <h2>Using feature branches</h2>
+    </hgroup>
+
+    <pre>
+    git checkout production
+    git merge feature_x
+    </pre>
+
+    <img src="content/images/otap_feature_branches.png" width="60%" class="border" />
+
+    <p></p>
+    <p class='note action'>Allows you to develop and deploy features independently!</p>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>OTAP</h1>
       <h2>How the git?!</h2>
     </hgroup>
     <p class="action">
@@ -393,12 +445,11 @@
     </p>
 
     <p class="action">
-      Use the appropriate branch when doing your work.
+      Update OTAP branches using rebase (with tagging) or merge (with feature branches).
     </p>
 
     <p class="note action">
-      In some scenarios it's okay to branch <code>production</code> to apply and test a fix for a critical bug. Just make sure you apply the
-      your changes back to the other branches.
+      What to do when a critical bug pops up in production?  
     </p>
       
   </section>
@@ -416,6 +467,25 @@
   </section>
 
   <!-- Unit Testing -->
+
+  <section>
+    <hgroup>
+      <h1>Unit Testing</h1>
+      <h2>I'd love to test, but...</h2>
+    </hgroup>
+    <p>
+      There are hundreds of reasons not to test.
+    </p>
+
+    <ul>
+      <li class="action">Writing tests takes more time than writing the actual code</li>
+      <li class="action">Maintaining tests takes a lot of effort, especially when refactoring</li>
+      <li class="action">Reaching 100% test coverage is impossible, why bother?</li>
+      <li class="action">My tests take too long to run, I removed them.</li>
+      <li class="action">We have tests, but there are still bugs!</li>
+      <li class="action">Stress! We need to deliver tomorrow!</li>
+    </ul>
+  </section>
 
   <section>
     <hgroup>
@@ -450,20 +520,77 @@
 
   <section>
     <hgroup>
-      <h1>Unit Testing</h1>
-      <h2>I'd love to test, but...</h2>
+      <h1>Testing</h1>
+      <h2>Test driven development</h2>
     </hgroup>
-    <p>
-      There are hundreds of reasons not to test.
-    </p>
+
+    <p>Implementing a new feature?</p>
 
     <ul>
-      <li class="action">Writing tests takes more time than writing the actual code</li>
-      <li class="action">Maintaining tests takes a lot of effort, especially when refactoring</li>
-      <li class="action">Reaching 100% test coverage is impossible, why bother?</li>
-      <li class="action">My tests take too long to run, I removed them.</li>
-      <li class="action">We have tests, but there are still bugs!</li>
-      <li class="action">Stress! We need to deliver tomorrow!</li>
+      <li class="action">Create a new branch</li>
+      <li class="action">Write a test</li>
+      <ul>
+        <li class="action">It should test (specify) your new feature</li>
+        <li class="action">It should fail</li>
+      </ul>
+      <li class="action">Hack!</li>
+      <li class="action">See your test pass</li>
+      <li class="action">Commit, merge, etc.</li>
+    </ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Testing</h1>
+      <h2>Test driven development</h2>
+    </hgroup>
+
+    <p>Fixing a bug?</p>
+
+    <ul>
+      <li class="action">Create a new branch</li>
+      <li class="action">Write a test</li>
+      <ul>
+        <li class="action">It should test (specify) correct functionality</li>
+        <li class="action">It should fail</li>
+      </ul>
+      <li class="action">Hack!</li>
+      <li class="action">See your test pass</li>
+      <li class="action">Commit, merge, etc.</li>
+    </ul>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Testing</h1>
+      <h2>Test driven development</h2>
+    </hgroup>
+
+    <p>Refactoring code?</p>
+
+    <ul>
+      <li class="action">Create a new branch</li>
+      <li class="action">Do <strong>not</strong> change your tests</code>
+      <li class="action">Hack!</li>
+      <li class="action">See your tests are still passing</li>
+      <li class="action">Commit, merge, etc.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h1 class="centered">Craftmanship</h1>
+  </section>
+
+  <section>
+    <hgroup>
+      <h1>Next week</h1>
+      <h2>Day 2</h2>
+    </hgroup>
+    <ul>
+      <li class="action">Short <code>git</code> recap</li>
+      <li class="action">More on testing!</li>
+      <li class="action">How to setup selenium testing (BDD) with PHP</li>
+      <li class="action">Continious Integration with Hudson</li>
     </ul>
   </section>
 
